@@ -76,3 +76,6 @@ class DBStorage:
 
         SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.__engine)
         self.__session = SessionLocal()
+    def close(self):
+        """method to close"""
+        self.__session.remove()
